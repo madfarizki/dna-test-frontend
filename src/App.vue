@@ -18,6 +18,15 @@ import Header from './components/Layout/Header.vue'
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+
+  &:hover {
+    color: #2178d5;
+  }
+}
+
 container {
   max-width: 1100px;
   margin: 0 auto;

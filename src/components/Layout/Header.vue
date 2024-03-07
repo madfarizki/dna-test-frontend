@@ -2,11 +2,20 @@
   <header>
     <nav class="container">
       <div class="logo">
-        <h1>MAD<span>News</span></h1>
+        <router-link to="/">
+          <h1>
+            MAD<span>News</span>
+          </h1>
+        </router-link>
       </div>
-      <ul class="nav-routes">
-        <a href="https://madfariz.my.id" target="_blank">About Me</a>
-      </ul>
+      <div class="nav-wrapper">
+        <ul class="nav-routes">
+          <router-link to="/history">History</router-link>
+        </ul>
+        <ul class="nav-routes">
+          <a href="https://madfariz.my.id" target="_blank">About Me</a>
+        </ul>
+      </div>
     </nav>
   </header>
 </template>
@@ -35,6 +44,7 @@ header {
 
       h1 {
         font-size: 24px;
+        font-weight: bold;
       }
 
       span {
@@ -42,17 +52,18 @@ header {
       }
     }
 
-    .nav-routes {
+    .nav-wrapper {
       display: flex;
       flex: 1;
       justify-content: flex-end;
       gap: 12px;
-      list-style: none;
+    }
 
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
+    .nav-routes {
+      display: flex;
+      gap: 12px;
+      list-style: none;
+      font-weight: bold;
     }
   }
 }

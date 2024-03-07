@@ -51,7 +51,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .item {
   aspect-ratio: 1;
   background: #f2f2f2;
@@ -78,15 +78,6 @@ export default {
   h2 {
     font-size: 18px;
     margin: 10px 0;
-  }
-
-  a {
-    text-decoration: none;
-    color: #000;
-
-    &:hover {
-      color: #2178d5;
-    }
   }
 
   p {
