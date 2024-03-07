@@ -3,7 +3,7 @@
     <div class="content-wrapper">
       <img :src="item.urlToImage" alt="Image" class="image" />
       <div class="content">
-        <h2><a :href="item.url" target="_blank">{{ shortText(item.title, 60) }}</a></h2>
+        <h2><a :href="item.url" target="_blank" @click="saveToLocalStorage">{{ shortText(item.title, 60) }}</a></h2>
         <p class="author">{{ item.author }} - {{ formatDate(item.publishedAt) }}</p>
         <p class="description">{{ shortText(item.description, 75) }}</p>
       </div>
@@ -33,6 +33,19 @@ export default {
       } else {
         return description;
       }
+    },
+    saveToLocalStorage() {
+      const readItems = JSON.parse(localStorage.getItem('readItems')) || [];
+
+      const existingItemIndex = readItems.findIndex(item => item.url === this.item.url);
+
+      if (existingItemIndex !== -1) {
+        readItems[existingItemIndex].count++;
+      } else {
+        readItems.push({ ...this.item, count: 1 });
+      }
+
+      localStorage.setItem('readItems', JSON.stringify(readItems));
     }
   }
 };
