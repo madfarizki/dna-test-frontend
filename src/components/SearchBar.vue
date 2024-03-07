@@ -46,11 +46,15 @@ export default {
 }
 
 .search-input {
-  width: 500px;
+  width: 300px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+
+  @media screen and (min-width: 1024px) {
+    width: 500px;
+  }
 }
 
 .reset-icon {

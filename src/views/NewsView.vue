@@ -2,6 +2,10 @@
   <div class="container">
     <SearchBar :articles="articles" @update:filteredArticles="updateFilteredArticles" />
     <div class="grid-container">
+      <template v-if="loading">
+        <Skeleton v-for="index in 15" :key="index" />
+      </template>
+
       <template v-if="filteredArticles.length">
         <CardItem v-for="item in filteredArticles" :key="item.id" :item="item" />
       </template>
@@ -18,11 +22,13 @@ import { onMounted, ref } from 'vue';
 import CardItem from "@/components/Card/CardItem.vue";
 import { useDataFetching } from '@/hooks/useDataFetching';
 import SearchBar from "@/components/SearchBar.vue";
+import Skeleton from '@/components/Skeleton.vue';
 
 export default {
   components: {
     CardItem,
-    SearchBar
+    SearchBar,
+    Skeleton
   },
   setup() {
     const { loading, error, fetchData } = useDataFetching();
@@ -71,6 +77,5 @@ export default {
   @media screen and (min-width: 64em) {
     grid-template-columns: repeat(4, 1fr);
   }
-
 }
 </style>

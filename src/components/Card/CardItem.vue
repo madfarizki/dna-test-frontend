@@ -41,7 +41,7 @@ export default {
 <style scoped>
 .item {
   aspect-ratio: 1;
-  background: #e7e7e7;
+  background: #f2f2f2;
   display: flex;
   border-radius: 5px;
 
@@ -72,7 +72,7 @@ export default {
     color: #000;
 
     &:hover {
-      color: #0056b3;
+      color: #2178d5;
     }
   }
 
@@ -103,8 +103,6 @@ export default {
   button:hover {
     background-color: #0056b3;
   }
-
-
 
   @media screen and (max-width: 800px) {
     grid-column: 1;

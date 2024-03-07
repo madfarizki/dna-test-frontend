@@ -22,4 +22,4 @@ container {
   max-width: 1100px;
   margin: 0 auto;
 }
-</style>./components/Layout/Header.vue
+</style>
