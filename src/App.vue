@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import Header from './components/Header.vue'
+import Header from './components/Layout/Header.vue'
 </script>
 
 <template>
@@ -22,4 +22,4 @@ container {
   max-width: 1100px;
   margin: 0 auto;
 }
-</style>
+</style>./components/Layout/Header.vue
