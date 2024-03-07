@@ -2,6 +2,9 @@
   <div class="search-container">
     <input type="text" v-model="searchQuery" placeholder="Search news..." @input="filterArticles"
       class="search-input" />
+    <span class="reset-icon" @click="resetSearch">
+      X
+    </span>
   </div>
 </template>
 
@@ -26,7 +29,12 @@ export default {
       emit('update:filteredArticles', filteredArticles);
     };
 
-    return { searchQuery, filterArticles };
+    const resetSearch = () => {
+      searchQuery.value = '';
+      filterArticles();
+    };
+
+    return { searchQuery, filterArticles, resetSearch };
   }
 }
 </script>
@@ -43,5 +51,10 @@ export default {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.reset-icon {
+  font-weight: bold;
+  cursor: pointer;
 }
 </style>

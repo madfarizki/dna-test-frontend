@@ -7,7 +7,7 @@
       </template>
 
       <template v-else>
-        <p class="no-articles-message">No articles found.</p>
+        <p>No news found.</p>
       </template>
     </div>
   </div>
