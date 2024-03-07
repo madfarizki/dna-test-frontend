@@ -64,6 +64,7 @@ export default {
 .item {
   aspect-ratio: 1;
   background: #f2f2f2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   border-radius: 5px;
 
