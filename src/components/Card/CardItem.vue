@@ -4,7 +4,7 @@
       <img :src="item.urlToImage" alt="Image" class="image" />
       <div class="content">
         <h2><a :href="item.url" target="_blank" @click="saveToLocalStorage">{{ shortText(item.title, 60) }}</a></h2>
-        <p class="author">{{ item.author }} - {{ formatDate(item.publishedAt) }}</p>
+        <p class="author">{{ item.author }} at {{ item.source.name }} - {{ formatDate(item.publishedAt) }}</p>
         <p class="description">{{ shortText(item.description, 75) }}</p>
       </div>
     </div>
@@ -22,8 +22,17 @@ export default {
   },
   methods: {
     formatDate(dateString) {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      return new Date(dateString).toLocaleDateString('en-US', options);
+      const date = new Date(dateString);
+      const options = {
+        weekday: 'short',
+        day: '2-digit',
+        month: 'short',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      };
+      const formattedDate = new Intl.DateTimeFormat('id-ID', options).format(date);
+      return formattedDate;
     },
     shortText(description, length = 80) {
       const maxLength = length;
