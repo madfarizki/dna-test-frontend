@@ -1,14 +1,6 @@
-# dna-test-ahmad
+This project is a test project created by Ahmad Alfarizki for job application purposes.
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Demo https://news.madfariz.my.id
 
 ## Project Setup
 
@@ -27,3 +19,5 @@ npm run dev
 ```sh
 npm run build
 ```
+
+For additional information, please contact me at https://madfariz.my.id
